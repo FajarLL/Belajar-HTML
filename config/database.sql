@@ -28,3 +28,5 @@ CREATE TABLE vendor_supplier (
     kontak VARCHAR(20),
     nama_barang VARCHAR(100)
 );
+
+-- masih salah perbaiki lagi 
