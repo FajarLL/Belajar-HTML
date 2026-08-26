@@ -5,7 +5,7 @@ CREATE TABLE admin (
     nomor_id VARCHAR(50) PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
     kontak VARCHAR(20),
-    email VARCHAR(100)
+    email VARCHAR(100),
 );
 
 CREATE TABLE inventory (
@@ -18,8 +18,10 @@ CREATE TABLE inventory (
 
 CREATE TABLE storage_unit (
     id_storage INT AUTO_INCREMENT PRIMARY KEY,
+    id_admin INT,
     nama_gudang VARCHAR(100) NOT NULL,
     lokasi VARCHAR(255)
+    FOREIGN KEY id_admin REFERENCES admin(nomor_id)
 );
 
 CREATE TABLE vendor_supplier (
