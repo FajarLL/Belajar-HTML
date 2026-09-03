@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplikasi Olahraga</title>
+</head>
+
+<body>
+
+<!-- HALAMAN LOGIN -->
+<div id="login">
+
+    <h1>Login</h1>
+
+    <form onsubmit="masuk(); return false;">
+
+        <label>Email</label><br>
+        <input type="email" id="email" placeholder="Masukkan email" required>
+
+        <br><br>
+
+        <label>Password</label><br>
+        <input type="password" id="password" placeholder="Masukkan password" required>
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p>
+        Belum punya akun?
+        <a href="#" onclick="daftar()">Daftar</a>
+    </p>
+
+</div>
+
+
+<!-- HALAMAN DASHBOARD -->
+<div id="dashboard" style="display:none;">
+
+    <h1>Menu Utama</h1>
+
+    <p>Selamat datang di Aplikasi Olahraga!</p>
+
+    <hr>
+
+    <h3>Menu</h3>
+
+    <ul>
+        <li>
+            <a href="#" onclick="beranda()">Beranda</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="profil()">Profil</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="latihan()">Latihan</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="jadwal()">Jadwal Olahraga</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="progress()">Progress</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="logout()">Logout</a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <div id="isi">
+
+        <h2>Beranda</h2>
+        <p>Selamat datang di menu utama.</p>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+function masuk() {
+
+    document.getElementById("login").style.display = "none";
+
+    document.getElementById("dashboard").style.display = "block";
+
+}
+
+function logout() {
+
+    document.getElementById("dashboard").style.display = "none";
+
+    document.getElementById("login").style.display = "block";
+
+}
+
+function beranda() {
+
+    document.getElementById("isi").innerHTML = `
+        <h2>Beranda</h2>
+        <p>Selamat datang di Aplikasi Olahraga.</p>
+    `;
+
+}
+
+function profil() {
+
+    document.getElementById("isi").innerHTML = `
+        <h2>Profil</h2>
+        <p>Nama: Ghozan</p>
+        <p>Email: Pengguna</p>
+    `;
+
+}
+
+function latihan() {
+
+    document.getElementById("isi").innerHTML = `
+        <h2>Latihan</h2>
+        <p>Pilih latihan yang ingin dilakukan.</p>
+        <ul>
+            <li>Lari</li>
+            <li>Push Up</li>
+            <li>Sit Up</li>
+            <li>Plank</li>
+        </ul>
+    `;
+
+}
+
+function jadwal() {
+
+    document.getElementById("isi").innerHTML = `
+        <h2>Jadwal Olahraga</h2>
+        <p>Senin - Lari</p>
+        <p>Rabu - Push Up</p>
+        <p>Jumat - Sit Up</p>
+    `;
+
+}
+
+function progress() {
+
+    document.getElementById("isi").innerHTML = `
+        <h2>Progress</h2>
+        <p>Progress olahraga kamu akan ditampilkan di sini.</p>
+    `;
+
+}
+
+function daftar() {
+
+    alert("Halaman pendaftaran belum dibuat.");
+
+}
+
+</script>
+
+</body>
+</html>
